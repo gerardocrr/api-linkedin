@@ -9,9 +9,14 @@ export const config = {
 
 const app = new Hono().basePath("/api");
 
-app.use("/api/*", cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://example.org"],
+  })
+);
 
 app.get("/", (c) => {
+  c.header;
   return c.json({
     message: "Welcome to the unofficial Linkedin API!",
     github: "https://github.com/gerardocrr/api-linkedin",
