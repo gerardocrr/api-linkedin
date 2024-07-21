@@ -16,7 +16,6 @@ app.use(
 );
 
 app.get("/", (c) => {
-  c.header;
   return c.json({
     message: "Welcome to the unofficial Linkedin API!",
     github: "https://github.com/gerardocrr/api-linkedin",
