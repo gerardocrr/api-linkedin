@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import { handle } from "hono/vercel";
 import { jobData } from "../lib/fetch";
 
@@ -7,6 +8,8 @@ export const config = {
 };
 
 const app = new Hono().basePath("/api");
+
+app.use("/api/*", cors());
 
 app.get("/", (c) => {
   return c.json({
