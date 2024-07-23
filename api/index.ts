@@ -11,7 +11,7 @@ const app = new Hono().basePath("/api");
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://example.org"],
+    origin: ["http://localhost:5173", "https://job-aligner-ai.vercel.app"],
   })
 );
 
